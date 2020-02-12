@@ -1,0 +1,28 @@
+{
+  "name": "stitching-gateway",
+  "version": "0.0.1",
+  "main": "server.ts",
+  "author": "v.branitsky@outlook.com",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "env-cmd ts-node src/server.ts",
+    "lint": "node_modules/.bin/tslint --fix -c tslint.json 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "apollo-link-context": "^1.0.19",
+    "apollo-link-error": "^1.1.12",
+    "apollo-link-http": "^1.5.16",
+    "apollo-server": "^2.9.16",
+    "apollo-server-caching": "^0.5.1",
+    "graphql": "14.3.1",
+    "graphql-tools": "^4.0.6",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "env-cmd": "9.0.3",
+    "ts-node": "8.3.0",
+    "tslint": "5.17.0",
+    "typescript": "3.5.2"
+  }
+}

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2018",
+        "lib": [
+            "es6"
+        ],
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "noUnusedLocals": false
+    },
+    "compileOnSave": false,
+    "exclude": [
+      "node_modules"
+    ]
+}
