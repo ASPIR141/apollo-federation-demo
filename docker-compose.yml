@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  reservations-service:
+    build:
+      context: ./reservations
+      dockerfile: Dockerfile
+    container_name: reservations-service
+    env_file: ./reservations/.env
+    ports:
+      - 4001:4001
+    networks:
+      - app-network
+  users-service:
+    build:
+      context: ./users
+      dockerfile: Dockerfile
+    container_name: users-service
+    env_file: ./users/.env
+    ports:
+      - 4002:4002
+    networks:
+      - app-network
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    container_name: gateway
+    env_file: ./api-gateway/.env
+    environment:
+      RESERVATIONS_SERVICE_URL: "http://reservations-service:4001"
+      USERS_SERVICE_URL: "http://users-service:4002"
+    ports:
+      - 4000:4000
+    depends_on:
+      - reservations-service
+      - users-service
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

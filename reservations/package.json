@@ -5,8 +5,10 @@
   "author": "v.branitsky@outlook.com",
   "license": "MIT",
   "scripts": {
+    "build": "tsc -b",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "env-cmd ts-node src/server.ts",
+    "start": "node dist/src/server.js",
     "lint": "node_modules/.bin/tslint --fix -c tslint.json 'src/**/*.ts'"
   },
   "dependencies": {
